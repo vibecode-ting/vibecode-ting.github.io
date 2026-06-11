@@ -10,7 +10,7 @@ This project is built using modern web technologies to ensure high performance, 
 
 Preview the live site at [portfolio.tinghah.online](https://portfolio.tinghah.online)
 
-[tinghah.github.io](https://tinghah.github.io) .
+[vibecode-ting.github.io]([https://vibecode-ting.github.io/]) .
 
 ## 🚀 Tech Stack
 
