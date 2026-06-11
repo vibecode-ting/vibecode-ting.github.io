@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  :root {
+    --bg: #ffffff;
+    --fg: #09090b;
+    --card: #f4f4f5;
+    --card-border: #e4e4e7;
+    --accent: #2563eb;
+    --muted: #71717a;
+  }
+  .dark {
+    --bg: #050505; /* Pure dark luxury */
+    --fg: #fafafa;
+    --card: #111111;
+    --card-border: #222222;
+    --accent: #10b981; /* Emerald for IT/Ops success */
+    --muted: #a1a1aa;
+  }
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+}
+
+/* Hide scrollbar for clean look */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--card-border);
+  border-radius: 10px;
+}
+
+/* Utility for glassmorphism */
+.glass {
+  background: rgba(17, 17, 17, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border);
+}
+
+.light .glass {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* High-readability text utility */
+.text-gradient {
+  color: var(--fg);
+}
+
+.dark .text-gradient {
+  background: linear-gradient(to right, #ffffff, #a1a1aa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.light .text-gradient {
+  background: linear-gradient(to right, #09090b, #4b5563);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Matrix rain glow effect */
+.matrix-glow {
+  filter: drop-shadow(0 0 6px rgba(0, 255, 65, 0.4));
+}
+
+.light .matrix-glow {
+  filter: drop-shadow(0 0 6px rgba(22, 101, 52, 0.4));
+}
+
+/* Nav button hover glow */
+.nav-glow:hover {
+  box-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
+}
+
+.dark .nav-glow:hover {
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+}
+
+/* Pulse animation for theme button */
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 5px rgba(245, 158, 11, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(245, 158, 11, 0.6); }
+}
+
+.theme-pulse {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
